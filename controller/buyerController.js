@@ -72,46 +72,6 @@ export const removeFromWishlist = async (req, res) => {
 
 
 // ===================== ADD TO CART =====================
-// export const addToCart = async (req, res) => {
-//   try {
-//     const userId = req.user?._id;
-//     const { bookId } = req.params;
-//     const quantity = Number(req.body.quantity) || 1;
-
-//     if (!userId) return res.status(401).json({ message: "Unauthorized" });
-//     if (!mongoose.Types.ObjectId.isValid(bookId))
-//       return res.status(400).json({ message: "Invalid book ID" });
-
-//     const user = await User.findById(userId);
-//     if (!user) return res.status(404).json({ message: "User not found" });
-
-//     const book = await Book.findById(bookId);
-//     if (!book) return res.status(404).json({ message: "Book not found" });
-
-//     if (!Array.isArray(user.cart)) user.cart = [];
-
-//     // Ensure all cart items have quantity
-//     user.cart = user.cart.map(item => ({
-//       book: item.book,
-//       quantity: item.quantity || 1
-//     }));
-
-//     const cartItem = user.cart.find(item => item.book && item.book.toString() === bookId);
-
-//     if (cartItem) {
-//       cartItem.quantity += quantity;
-//     } else {
-//       user.cart.push({ book: bookId, quantity });
-//     }
-
-//     await user.save();
-
-//     return res.status(200).json({ message: "Book added to cart", cart: user.cart });
-//   } catch (error) {
-//     console.error("Add to Cart Error:", error);
-//     return res.status(500).json({ message: "Server error while adding to cart" });
-//   }
-// };
 
 export const addToCart = async (req, res) => {
   try {

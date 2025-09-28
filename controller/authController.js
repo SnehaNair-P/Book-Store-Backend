@@ -29,13 +29,6 @@ export const register = async (req, res, next) => {
   }
 };
 
-//     res.status(201).json({ message: "User registered successfully", user });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
-
 
 // Login
 export const login = async (req, res, next) => {
