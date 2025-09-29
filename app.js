@@ -22,7 +22,9 @@ const __dirname = path.dirname(__filename);
 
 
 app.use(cors({
-  origin: 'http://localhost:3000', 
+  origin: ['http://localhost:3000',
+    'book-store-react-jade.vercel.app'
+  ], 
   credentials: true
 }));
 
